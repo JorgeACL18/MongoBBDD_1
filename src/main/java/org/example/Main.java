@@ -22,7 +22,7 @@ public class Main {
         SpringApplication.run(Main.class, args);
     }
 
-   /* @Bean
+    @Bean
     public CommandLineRunner loadData(
             AdestradorRepository adestradorRepo,
             PokemonRepository pokemonRepo
@@ -31,27 +31,27 @@ public class Main {
 
             ObjectMapper mapper = new ObjectMapper();
 
-            InputStream adestradoresStream = getClass().getResourceAsStream("/adestradores.json");
-            List<Adestrador> adestradores = mapper.readValue(
-                    adestradoresStream,
+            InputStream adeStream = getClass().getResourceAsStream("/adestradores.json");
+            List<Adestrador> ades = mapper.readValue(
+                    adeStream,
                     new TypeReference<List<Adestrador>>() {}
             );
-            adestradorRepo.saveAll(adestradores);
+            adestradorRepo.saveAll(ades);
 
-            InputStream pokemonStream = getClass().getResourceAsStream("/pokemon.json");
-            List<Pokemon> pokemons = mapper.readValue(
-                    pokemonStream,
+            InputStream pokStream = getClass().getResourceAsStream("/pokemon.json");
+            List<Pokemon> pokes = mapper.readValue(
+                    pokStream,
                     new TypeReference<List<Pokemon>>() {}
             );
 
-            for (int i = 0; i < pokemons.size(); i++) {
-                Adestrador dueño = adestradores.get(i % adestradores.size());
-                pokemons.get(i).setAdestradorID(dueño.getId());
+            for (int i = 0; i < pokes.size(); i++) {
+                Adestrador entrenador = ades.get(i % ades.size());
+                pokes.get(i).setAdestradorID(entrenador.getId());
             }
 
-            pokemonRepo.saveAll(pokemons);
+            pokemonRepo.saveAll(pokes);
             System.out.println("Datos guardados");
         };
-    }*/
+    }
 }
 
