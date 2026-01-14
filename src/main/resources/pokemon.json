@@ -1,0 +1,12 @@
+[
+  { "nome": "Clefairy",
+    "tipo": ["Hada"],
+    "nivel": 100,
+    "habilidades": ["Gran encanto", "Compiescolta"]
+  },
+  { "nome": "Primarina",
+    "tipo": ["Agua", "Hada"],
+    "nivel": 50,
+    "habilidades": ["Torrente", "Voz fluida"]
+  }
+]
