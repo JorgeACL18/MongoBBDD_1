@@ -8,4 +8,3 @@ import org.springframework.stereotype.Repository;
 public interface AdestradorRepository extends MongoRepository<Adestrador, String> {
 
 }
-
